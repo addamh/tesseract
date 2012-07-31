@@ -15,3 +15,6 @@ gem "capybara", ">= 1.1.2", :group => :test
 gem "database_cleaner", ">= 0.8.0", :group => :test
 gem "launchy", ">= 2.1.0", :group => :test
 gem "devise", ">= 2.1.2"
+gem 'omniauth-github', :git => 'git://github.com/intridea/omniauth-github.git'
+gem 'omniauth-twitter', :git => 'git://github.com/arunagw/omniauth-twitter.git'
+gem 'omniauth-linkedin', :git => 'git://github.com/skorks/omniauth-linkedin.git'

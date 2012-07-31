@@ -1,0 +1,5 @@
+if "/usr/local/rvm/environments/ruby-1.9.3-p194@tesseract" ]] ; then
+   . "/usr/local/rvm/environments/ruby-1.9.3-p194@tesseract"
+else
+     rvm --create use  "ruby-1.9.3-p194@tesseract"
+fi

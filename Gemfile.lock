@@ -1,3 +1,26 @@
+GIT
+  remote: git://github.com/arunagw/omniauth-twitter.git
+  revision: a6b433e35c7e978f55723ecc50ed13475e311d9a
+  specs:
+    omniauth-twitter (0.0.12)
+      multi_json (~> 1.3)
+      omniauth-oauth (~> 1.0)
+
+GIT
+  remote: git://github.com/intridea/omniauth-github.git
+  revision: 2430e20843daa0acb681994d2f15fac0dbd44631
+  specs:
+    omniauth-github (1.0.2)
+      omniauth (~> 1.0)
+      omniauth-oauth2 (~> 1.1)
+
+GIT
+  remote: git://github.com/skorks/omniauth-linkedin.git
+  revision: 23d3c26ac423cdef599450abce6397f2ed9dac89
+  specs:
+    omniauth-linkedin (0.0.6)
+      omniauth-oauth (~> 1.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -75,16 +98,22 @@ GEM
     factory_girl_rails (3.5.0)
       factory_girl (~> 3.5.0)
       railties (>= 3.0.0)
+    faraday (0.8.1)
+      multipart-post (~> 1.1)
     ffi (1.0.11)
     gherkin (2.11.1)
       json (>= 1.4.6)
+    hashie (1.2.0)
     hike (1.2.1)
+    httpauth (0.1)
     i18n (0.6.0)
     journey (1.0.4)
     jquery-rails (2.0.2)
       railties (>= 3.2.0, < 5.0)
       thor (~> 0.14)
     json (1.7.3)
+    jwt (0.1.5)
+      multi_json (>= 1.0)
     launchy (2.1.0)
       addressable (~> 2.2.6)
     libwebsocket (0.1.3)
@@ -95,7 +124,24 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.19)
     multi_json (1.3.6)
+    multipart-post (1.1.5)
     nokogiri (1.5.5)
+    oauth (0.4.6)
+    oauth2 (0.8.0)
+      faraday (~> 0.8)
+      httpauth (~> 0.1)
+      jwt (~> 0.1.4)
+      multi_json (~> 1.0)
+      rack (~> 1.2)
+    omniauth (1.1.0)
+      hashie (~> 1.2)
+      rack
+    omniauth-oauth (1.0.1)
+      oauth
+      omniauth (~> 1.0)
+    omniauth-oauth2 (1.1.0)
+      oauth2 (~> 0.8.0)
+      omniauth (~> 1.0)
     orm_adapter (0.4.0)
     polyglot (0.3.3)
     rack (1.4.1)
@@ -179,6 +225,9 @@ DEPENDENCIES
   factory_girl_rails (>= 3.5.0)
   jquery-rails
   launchy (>= 2.1.0)
+  omniauth-github!
+  omniauth-linkedin!
+  omniauth-twitter!
   rails (= 3.2.6)
   rspec-rails (>= 2.11.0)
   sass-rails (~> 3.2.3)

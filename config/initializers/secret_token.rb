@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Tesseract::Application.config.secret_token = '9c1db876402e1d054946449e6befd8562fdb8568520c93d7f6df4e6afe622cd6ddfe2ca3593a85e752b26d306dd5d43004ebecfdcbd81cc789ef7649b7b22f2d'
+Rails3DeviseRspecCucumber::Application.config.secret_token = 'e9cc99b6e2e41d3cd5dc9e0931555b65715720ab21a6733f6e09239d16b15e473154a46fde493abd86abb5487688e52301ca9b8272ddb5bc7977164549bcddec'

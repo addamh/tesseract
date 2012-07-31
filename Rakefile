@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Tesseract::Application.load_tasks
+Rails3DeviseRspecCucumber::Application.load_tasks

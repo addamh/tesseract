@@ -28,6 +28,8 @@ The idea for this app came from a request in the NWA Developer Group on Facebook
 * List degrees and certifications if available. However if there are none it won't be negatively shown "Degrees: None" or "Certifications: None". They will just not be listed. It will be understood that those are extra qualifications and are not necessarily indicative of developer quality. Developer's previous work and references will speak to quality of developer. 
 * Donate buttons
 * Gravatar
+* Ability to set rate within a range. ($40/hour - $90/hour)
+* Ability to set 'Contact me for rate' (although setting a rate or rate range will be encouraged and preferred)
 
 ## Potential Features
 * LinkedIn Authentication

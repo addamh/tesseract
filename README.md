@@ -10,7 +10,7 @@ The idea for this app came from a request in the NWA Developer Group on Facebook
 * It will be developer driven and developer centric. Employers will be searching out and competing for developers. Developers will not be competing for employers. The active nature of the app will fall on the Employers and Recruiters. The passive nature of the app will fall on the Developers. 
 
 ## Features
-* Twitter autentication
+* Twitter authentication
 * Facebook authentication
 * GitHub authentication
 * 3 User types: Developer, Employer, Recruiter
@@ -21,9 +21,9 @@ The idea for this app came from a request in the NWA Developer Group on Facebook
 * Will track number of page views for a developer's profile
 * Developers must post their hourly rate and/or if they are willing to do flat rate projects. 
 * Developer rates will be shown in short form to potential employers in a Yelp like $ - $$$$
-* Developers can set their hourly rate to 'hard' or 'negotitable'
+* Developers can set their hourly rate to 'hard' or 'negotiable'
 * Search for a skill and show developers that list that skills. (iOS, Ruby on Rails, Django, Javascript, etc.)
-* Developers will be able to set 4 different availability statuses (Available For Work, 3 months availabilty (some point between now and 3 months), 6 months availability (some point between now and 6 months), Unavailable For Work)
+* Developers will be able to set 4 different availability statuses (Available For Work, 3 months availability (some point between now and 3 months), 6 months availability (some point between now and 6 months), Unavailable For Work)
 * Links to Developer's social profiles (if they provide them)
 * List degrees and certifications if available. However if there are none it won't be negatively shown "Degrees: None" or "Certifications: None". They will just not be listed. It will be understood that those are extra qualifications and are not necessarily indicative of developer quality. Developer's previous work and references will speak to quality of developer. 
 * Donate buttons

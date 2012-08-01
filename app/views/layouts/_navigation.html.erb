@@ -1,13 +1,10 @@
-<%= link_to "Rails3 Devise Rspec Cucumber", root_path, :class => 'brand' %>
+<%= link_to "Tesseract", root_path, :class => 'brand' %>
 <ul class="nav">
   <% if user_signed_in? %>
     <li>
     <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %>        
     </li>
   <% else %>
-    <li>
-    <%= link_to 'Login', new_user_session_path %>  
-    </li>
   <% end %>
   <% if user_signed_in? %>
     <li>
@@ -15,16 +12,10 @@
     </li>
   <% else %>
     <li>
-    <%= link_to 'Sign up', new_user_registration_path %>
+    <%= link_to 'Sign In With Twitter', '/users/auth/twitter' %>
     </li>
     <li>
-    <%= link_to 'Sign In With Github', user_omniauth_authorize_path(:github) %>
-    </li>
-    <li>
-    <%= link_to 'Sign In With Twitter', user_omniauth_authorize_path(:twitter) %>
-    </li>
-    <li>
-    <%= link_to 'Sign In With LinkedIn', user_omniauth_authorize_path(:linkedin) %>
+    <%= link_to 'Sign In With LinkedIn', '/users/auth/linkedin' %>
     </li>
   <% end %>
 </ul>

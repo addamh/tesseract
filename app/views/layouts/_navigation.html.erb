@@ -17,5 +17,14 @@
     <li>
     <%= link_to 'Sign up', new_user_registration_path %>
     </li>
+    <li>
+    <%= link_to 'Sign In With Github', user_omniauth_authorize_path(:github) %>
+    </li>
+    <li>
+    <%= link_to 'Sign In With Twitter', user_omniauth_authorize_path(:twitter) %>
+    </li>
+    <li>
+    <%= link_to 'Sign In With LinkedIn', user_omniauth_authorize_path(:linkedin) %>
+    </li>
   <% end %>
 </ul>

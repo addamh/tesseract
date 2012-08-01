@@ -5,7 +5,9 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class with default "from" parameter.
   config.mailer_sender = "please-change-me-at-config-initializers-devise@example.com"
-
+  config.omniauth  :twitter, ENV['twitter_consumer_key'], ENV['twitter_consumer_secret']
+  config.omniauth  :github, ENV['GITHUB_KEY'], ENV['GITHUB_SECRET']
+  config.omniauth  :linkedin, ENV['linkedin_consumer_key'], ENV['linkedin_consumer_secret']
   # Configure the class responsible to send e-mails.
   # config.mailer = "Devise::Mailer"
 

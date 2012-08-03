@@ -1,0 +1,21 @@
+= link_to "Tesseract", root_path, :class => 'brand'
+%ul.nav
+  - if user_signed_in?
+    %li
+      %a
+        Jobs
+    %li
+      %a
+        Developers
+    %li
+      %a
+        My Profile
+%ul.nav{:style => "float: right;"}
+  - if user_signed_in?
+    %li 
+      = link_to "Settings", services_path
+    %li
+      = link_to("Logout of username", signout_services_path)
+  - else 
+    %li
+      = link_to "Sign In", signin_services_path

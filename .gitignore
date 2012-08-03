@@ -1,3 +1,4 @@
+script/setENV.sh
 config/initializers/omniauth.rb
 *.rbc
 *.sassc

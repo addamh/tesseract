@@ -13,32 +13,15 @@ Tesseract::Application.configure do
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
 
-  # ActionMailer Config
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
-  config.action_mailer.delivery_method = :smtp
-  # change to true to allow email to be sent during development
-  config.action_mailer.perform_deliveries = false
-  config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default :charset => "utf-8"
-
-  config.action_mailer.smtp_settings = {
-    address: "smtp.gmail.com",
-    port: 587,
-    domain: "example.com",
-    authentication: "plain",
-    enable_starttls_auto: true,
-    user_name: ENV["GMAIL_USERNAME"],
-    password: ENV["GMAIL_PASSWORD"]
-  }
-
-
+  # Don't care if the mailer can't send
+  config.action_mailer.raise_delivery_errors = false
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
 
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
-
+  
   # Raise exception on mass assignment protection for Active Record models
   config.active_record.mass_assignment_sanitizer = :strict
 
@@ -51,4 +34,36 @@ Tesseract::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  
+  Rails.application.config.middleware.use OmniAuth::Builder do
+    # ALWAYS RESTART YOUR SERVER IF YOU MAKE CHANGES TO THESE SETTINGS!
+    
+    # you need a store for OpenID; (if you deploy on heroku you need Filesystem.new('./tmp') instead of Filesystem.new('/tmp'))
+    require 'openid/store/filesystem'
+    
+    # load certificates
+    require "openid/fetchers"
+    OpenID.fetcher.ca_file = "#{Rails.root}/config/ca-bundle.crt"
+    
+    # providers with id/secret, you need to sign up for their services (see below) and enter the parameters here
+    provider :facebook, ENV["FACEBOOK_APP_ID"], ENV["FACEBOOK_APP_SECRET"]
+    provider :twitter, ENV["TWITTER_CONSUMER_KEY"], ENV["TWITTER_CONSUMER_SECRET"]
+    provider :github, ENV['GITHUB_KEY'], ENV['GITHUB_SECRET'], scope: "user,repo,gist"
+    provider :linkedin, ENV['LINKEDIN_KEY'], ENV['LINKEDIN_SECRET']
+    
+    # generic openid
+    provider :openid, :store => OpenID::Store::Filesystem.new('/tmp'), :name => 'openid'
+    
+    # dedicated openid
+    provider :openid, :store => OpenID::Store::Filesystem.new('/tmp'), :name => 'google', :identifier => 'https://www.google.com/accounts/o8/id'
+    provider :google_apps, :store => OpenID::Store::Filesystem.new('/tmp'), :name => 'google_apps'
+    # /auth/google_apps; you can bypass the prompt for the domain with /auth/google_apps?domain=somedomain.com
+
+    provider :openid, :store => OpenID::Store::Filesystem.new('/tmp'), :name => 'myopenid', :identifier => 'myopenid.com'
+    
+    # Sign-up urls for Facebook, Twitter, and Github
+    # https://developers.facebook.com/setup
+    # https://github.com/account/applications/new
+    # https://developer.twitter.com/apps/new
+  end
 end

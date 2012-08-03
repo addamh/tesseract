@@ -2,7 +2,7 @@ Tesseract
 =========
 
 App location: http://tesseractapp.herokuapp.com/
-Note: Github is currently the only app I have pointed to the production URL. Twitter and Facebook are pointed to localhost. This means only Github and Google will work on this URL.
+Note: Github is currently the only app I have pointed to the production URL. Twitter and Facebook are pointed to localhost. This means only Github and Google will work on this URL. Google is currently having issues running on production. Still investigating.
 
 The idea for this app came from a request in the NWA Developer Group on Facebook for a google document or other place where a potential employer could look for developers in the area that are currently available for freelance work. We have communication groups on Facebook and LinkedIn but it's not really easy to see what everyone's specialties are and it's possible to determine passively if they are available for work or not. This application will hope to be the platform for that information. 
 

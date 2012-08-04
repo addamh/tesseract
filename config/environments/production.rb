@@ -31,10 +31,11 @@ Tesseract::Application.configure do
 
   # Do not compress assets
   config.assets.compress = true
-
+  config.assets.compile = true
+  config.serve_static_assets = false
+  
   # Expands the lines which load the assets
   config.assets.debug = true
-  config.assets.precompile += %w( application.js )
   
   Rails.application.config.middleware.use OmniAuth::Builder do
     # ALWAYS RESTART YOUR SERVER IF YOU MAKE CHANGES TO THESE SETTINGS!

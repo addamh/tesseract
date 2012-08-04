@@ -31,7 +31,7 @@ class ServicesController < ApplicationController
       @newuser = User.new
       @newuser.name = session[:authhash][:name]
       @newuser.email = session[:authhash][:email]
-      @newuser.username = session[:authhash][:username]
+      #@newuser.username = session[:authhash][:username]
       @newuser.services.build(:provider => session[:authhash][:provider], :uid => session[:authhash][:uid], :uname => session[:authhash][:name], :uemail => session[:authhash][:email])
       
       if @newuser.save!

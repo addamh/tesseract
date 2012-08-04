@@ -30,7 +30,12 @@ Tesseract::Application.configure do
   config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   config.assets.compress = true
-  config.assets.compile = true
+  config.assets.compile = false
+  config.assets.digest = true
+  config.assets.precompile += %w[]
+  config.serve_static_assets = true
+  config.assets.css_compressor = :yui
+  config.assets.js_compressor = :uglifier
   
   # Expands the lines which load the assets
   config.assets.debug = true

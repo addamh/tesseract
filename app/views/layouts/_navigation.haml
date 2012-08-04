@@ -15,10 +15,17 @@
         My Profile
 %ul.nav{:style => "float: right;"}
   - if user_signed_in?
-    %li 
-      = link_to "Settings", services_path
-    %li
-      = link_to("Logout of username", signout_services_path)
+    %li.dropdown
+      %a.dropdown-toggle{:href => "#", :data => {:toggle => "dropdown"}}
+        = current_user.name
+        %b.caret
+      %ul.dropdown-menu
+        %li 
+          = link_to "My Profile", edit_users_url
+        %li 
+          = link_to "Settings", services_path
+        %li
+          = link_to("Logout", signout_services_path)
   - else 
     %li
       = link_to "Sign In", signin_services_path

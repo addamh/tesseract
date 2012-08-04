@@ -31,6 +31,7 @@ class ServicesController < ApplicationController
       @newuser = User.new
       @newuser.name = session[:authhash][:name]
       @newuser.email = session[:authhash][:email]
+      @newuser.username = session[:authhash][:username]
       @newuser.services.build(:provider => session[:authhash][:provider], :uid => session[:authhash][:uid], :uname => session[:authhash][:name], :uemail => session[:authhash][:email])
       
       if @newuser.save!
@@ -40,7 +41,7 @@ class ServicesController < ApplicationController
         session[:service_id] = @newuser.services.first.id
         
         flash[:notice] = 'Your account has been created and you have been signed in!'
-        redirect_to root_url
+        redirect_to edit_users_url
       else
         flash[:error] = 'This is embarrassing! There was an error while creating your account from which we were not able to recover.'
         redirect_to root_url
@@ -69,7 +70,7 @@ class ServicesController < ApplicationController
 
     # get the full hash from omniauth
     omniauth = request.env['omniauth.auth']
-    
+    #raise omniauth.to_yaml
     # continue only if hash and parameter exist
     if omniauth and params[:service]
 
@@ -77,7 +78,7 @@ class ServicesController < ApplicationController
       
       # create a new hash
       @authhash = Hash.new
-      
+
       if service_route == 'facebook'
         omniauth['extra']['raw_info']['email'] ? @authhash[:email] =  omniauth['extra']['raw_info']['email'] : @authhash[:email] = ''
         omniauth['extra']['raw_info']['name'] ? @authhash[:name] =  omniauth['extra']['raw_info']['name'] : @authhash[:name] = ''
@@ -88,7 +89,9 @@ class ServicesController < ApplicationController
         omniauth['info']['name'] ? @authhash[:name] =  omniauth['info']['name'] : @authhash[:name] = ''
         omniauth['extra']['raw_info']['id'] ? @authhash[:uid] =  omniauth['extra']['raw_info']['id'].to_s : @authhash[:uid] = ''
         omniauth['provider'] ? @authhash[:provider] =  omniauth['provider'] : @authhash[:provider] = ''  
-      elsif ['google', 'google_apps', 'yahoo', 'twitter', 'myopenid', 'open_id'].index(service_route) != nil
+        omniauth['info']['nickname'] ? @authhash[:username] = omniauth['info']['nickname'] : @authhash[:username] = ''
+      elsif ['google', 'google_apps', 'yahoo', 'twitter', 'myopenid', 'open_id', 'linkedin'].index(service_route) != nil
+        omniauth['info']['nickname'] ? @authhash[:username] = omniauth['info']['nickname'] : @authhash[:username] = ''
         omniauth['info']['email'] ? @authhash[:email] =  omniauth['info']['email'] : @authhash[:email] = ''
         omniauth['info']['name'] ? @authhash[:name] =  omniauth['info']['name'] : @authhash[:name] = ''
         omniauth['uid'] ? @authhash[:uid] = omniauth['uid'].to_s : @authhash[:uid] = ''

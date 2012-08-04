@@ -21,6 +21,7 @@ Tesseract::Application.routes.draw do
   resources :users, :only => [:index] do
     collection do
       get 'test'
+      get 'edit'
     end
   end
    

@@ -13,11 +13,7 @@
 //= require jquery
 //= require jquery-ui
 //= require jquery_ujs
-//= require bootstrap
-//= require jquery
-//= require bootstrap-dropdown
-//= require bootstrap-tab
-//= require bootstrap-transition
+//= require twitter/bootstrap
 //= require highcharts
 //= require jquery.gravatar
 //= require jquery.highlight

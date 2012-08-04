@@ -13,6 +13,15 @@
 //= require jquery
 //= require jquery-ui
 //= require jquery_ujs
-//= require bootstrap-dropdown
 //= require bootstrap
-//= require_tree .
+//= require bootstrap-dropdown
+//= require bootstrap-tab
+//= require bootstrap-transition
+//= require highcharts
+//= require jquery.gravatar
+//= require jquery.highlight
+//= require jquery.noty
+//= require jquery.relative-date
+//= require md5
+//= require services
+//= require users

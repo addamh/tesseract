@@ -22,3 +22,7 @@
 //= require md5
 //= require services
 //= require users
+
+$(function(){
+  $('.dropdown-toggle').dropdown()
+})

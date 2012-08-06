@@ -18,6 +18,8 @@ class ApplicationController < ActionController::Base
         flash[:error] = 'You need to sign in before accessing this page!'
         redirect_to signin_services_path
       end
+      current_user.last_seen = Time.now
+      current_user.save!
     end
     
 end

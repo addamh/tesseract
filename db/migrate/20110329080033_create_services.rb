@@ -6,6 +6,7 @@ class CreateServices < ActiveRecord::Migration
       t.string :uid
       t.string :uname
       t.string :uemail
+      t.string :avatar_url
 
       t.timestamps
     end

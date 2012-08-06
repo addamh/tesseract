@@ -18,6 +18,9 @@
   - if user_signed_in?
     %li.dropdown
       %a.dropdown-toggle{:href => "#", :data => {:toggle => "dropdown"}}
+        - if current_user.current_avatar != nil
+          - avatar_url = Service.find(current_user.current_avatar).avatar_url
+          %img{:src => avatar_url, :height => 25, :width => 25, :style => "border: 1px solid grey; margin-right: 5px;"}
         = current_user.name
         %b.caret
       %ul.dropdown-menu

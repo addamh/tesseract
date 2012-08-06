@@ -1,3 +1,3 @@
 class Profile < ActiveRecord::Base
-  # attr_accessible :title, :body
+  attr_accessible :contacts, :note, :points, :pref_payment, :rate, :resume, :type, :views, :website
 end

@@ -1,6 +1,7 @@
 class AddFieldsToUser < ActiveRecord::Migration
   def change
-    add_column :users, :avatar_url, :string
-    add_column :users, :last_seen, :datetime
+    add_column :users, :admin,          :boolean
+    add_column :users, :last_seen,      :timestamp
+    add_column :users, :current_avatar, :integer
   end
 end

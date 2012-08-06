@@ -31,14 +31,20 @@ class ServicesController < ApplicationController
       @newuser = User.new
       @newuser.name = session[:authhash][:name]
       @newuser.email = session[:authhash][:email]
-      #@newuser.username = session[:authhash][:username]
-      @newuser.services.build(:provider => session[:authhash][:provider], :uid => session[:authhash][:uid], :uname => session[:authhash][:name], :uemail => session[:authhash][:email])
+      @newuser.username = session[:authhash][:username]
+      @newuser.last_seen = Time.now
+
+      @newuser.services.build(:provider => session[:authhash][:provider], :uid => session[:authhash][:uid], :uname => session[:authhash][:name], :uemail => session[:authhash][:email], :avatar_url => session[:authhash][:avatar_url])
+      
       
       if @newuser.save!
         # signin existing user
         # in the session his user id and the service id used for signing in is stored
         session[:user_id] = @newuser.id
         session[:service_id] = @newuser.services.first.id
+        
+        @newuser.current_avatar = session[:service_id]
+        @newuser.save!
         
         flash[:notice] = 'Your account has been created and you have been signed in!'
         redirect_to edit_users_url
@@ -83,17 +89,21 @@ class ServicesController < ApplicationController
         omniauth['extra']['raw_info']['email'] ? @authhash[:email] =  omniauth['extra']['raw_info']['email'] : @authhash[:email] = ''
         omniauth['extra']['raw_info']['name'] ? @authhash[:name] =  omniauth['extra']['raw_info']['name'] : @authhash[:name] = ''
         omniauth['extra']['raw_info']['id'] ?  @authhash[:uid] =  omniauth['extra']['raw_info']['id'].to_s : @authhash[:uid] = ''
+        omniauth['info']['image'] ? @authhash[:avatar_url] = omniauth['info']['image'] : @authhash[:avatar_url] = ''
         omniauth['provider'] ? @authhash[:provider] = omniauth['provider'] : @authhash[:provider] = ''
+        omniauth['info']['nickname'] ? @authhash[:username] = omniauth['info']['nickname'] : @authhash[:username] = ''
       elsif service_route == 'github'
         omniauth['info']['email'] ? @authhash[:email] =  omniauth['info']['email'] : @authhash[:email] = ''
         omniauth['info']['name'] ? @authhash[:name] =  omniauth['info']['name'] : @authhash[:name] = ''
         omniauth['extra']['raw_info']['id'] ? @authhash[:uid] =  omniauth['extra']['raw_info']['id'].to_s : @authhash[:uid] = ''
+        omniauth['extra']['raw_info']['avatar_url'] ? @authhash[:avatar_url] = omniauth['extra']['raw_info']['avatar_url'] : @authhash[:avatar_url] = ''
         omniauth['provider'] ? @authhash[:provider] =  omniauth['provider'] : @authhash[:provider] = ''  
         omniauth['info']['nickname'] ? @authhash[:username] = omniauth['info']['nickname'] : @authhash[:username] = ''
       elsif ['google', 'google_apps', 'yahoo', 'twitter', 'myopenid', 'open_id', 'linkedin'].index(service_route) != nil
         omniauth['info']['nickname'] ? @authhash[:username] = omniauth['info']['nickname'] : @authhash[:username] = ''
         omniauth['info']['email'] ? @authhash[:email] =  omniauth['info']['email'] : @authhash[:email] = ''
         omniauth['info']['name'] ? @authhash[:name] =  omniauth['info']['name'] : @authhash[:name] = ''
+        omniauth['info']['image'] ? @authhash[:avatar_url] = omniauth['info']['image'] : @authhash[:avatar_url] = ''
         omniauth['uid'] ? @authhash[:uid] = omniauth['uid'].to_s : @authhash[:uid] = ''
         omniauth['provider'] ? @authhash[:provider] = omniauth['provider'] : @authhash[:provider] = ''
       else        
@@ -112,7 +122,8 @@ class ServicesController < ApplicationController
             flash[:notice] = 'Your account at ' + @authhash[:provider].capitalize + ' is already connected with this site.'
             redirect_to services_path
           else
-            current_user.services.create!(:provider => @authhash[:provider], :uid => @authhash[:uid], :uname => @authhash[:name], :uemail => @authhash[:email])
+            puts @authhash[:avatar_url]
+            current_user.services.create!(:provider => @authhash[:provider], :uid => @authhash[:uid], :uname => @authhash[:name], :uemail => @authhash[:email], :avatar_url => @authhash[:avatar_url])
             flash[:notice] = 'Your ' + @authhash[:provider].capitalize + ' account has been added for signing in at this site.'
             redirect_to services_path
           end
@@ -122,8 +133,9 @@ class ServicesController < ApplicationController
             # in the session his user id and the service id used for signing in is stored
             session[:user_id] = auth.user.id
             session[:service_id] = auth.id
-          
             flash[:notice] = 'Signed in successfully via ' + @authhash[:provider].capitalize + '.'
+            current_user.last_seen = Time.now
+            current_user.save!
             redirect_to root_url
           else
             # this is a new user; show signup; @authhash is available to the view and stored in the sesssion for creation of a new user

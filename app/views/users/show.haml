@@ -1,0 +1,19 @@
+= form_for @user, :method => :put, :url => user_path do |f|
+  Name: #{f.text_field :name}
+  %br/
+  Email : #{f.text_field :email}
+  %br/
+  = f.fields_for :profile do |p|
+    Website: #{p.text_field :website}
+  = f.submit
+
+= current_user.inspect
+%br
+%br
+- current_user.services.each do |s|
+  = s.inspect
+  %img{:src => s.avatar_url}
+  %br
+%br
+%br
+= session.inspect

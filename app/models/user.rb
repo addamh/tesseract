@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
   has_one   :profile
   has_one   :availability_status
   
-  attr_accessible :name, :email, :username, :last_seen, :avatar_url
+  accepts_nested_attributes_for :profile
+  
+  attr_accessible :name, :email, :username, :last_seen, :avatar_url, :profile_attributes
 
 end

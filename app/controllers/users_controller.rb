@@ -7,11 +7,20 @@ class UsersController < ApplicationController
   end
   
   def edit
-    
+    @user = User.find(params[:id])
   end
   
   def show
     
+  end
+  
+  def update 
+    @user = User.find(params[:id])
+    if @user.update_attributes(params[:user])
+      redirect_to edit_user_path, :notice => "User updated"
+    else
+      redirect_to edit_user_path, :notice => "Update failed"
+    end
   end
   
   def destroy

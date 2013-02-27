@@ -20,6 +20,7 @@
       .container-fluid
         .content
           .row-fluid
+            = flash[:notice]
             = yield
           %footer
 

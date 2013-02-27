@@ -26,6 +26,7 @@ gem 'compass'
 gem 'chronic'
 gem 'rvm'
 gem "twitter-bootstrap-rails"
+gem "simple_form"
 
 group :production do 
   gem 'pg'

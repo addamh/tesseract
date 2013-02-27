@@ -18,12 +18,7 @@ Tesseract::Application.routes.draw do
   end
 
   # used for the demo application only
-  resources :users, :only => [:index] do
-    collection do
-      get 'test'
-      get 'edit'
-    end
-  end
+  resources :users
    
   root :to => "users#index"
 end

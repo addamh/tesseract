@@ -1,0 +1,191 @@
+/*1346826032,173213213*/
+
+.adboard_header{border-bottom:1px solid #ccc;padding-bottom:10px}
+.adboard_title{float:left;font-size:12pt;font-weight:bold}
+.adboard_nav_tags{margin-top:10px;margin-left:-5px}
+.adboard_no_ads{color:#666;font-size:13px;padding:30px 0 60px;text-align:center}
+.adboard_unit_set{margin-top:10px}
+.adboard_unit{float:left;margin:20px 40px 20px 0;width:234px}
+.uiDatepicker input.textField{background:#fff url(https://s-static.ak.fbcdn.net/rsrc.php/v2/yT/x/saFg5U_7LMd.png) 81px 50% no-repeat;border:1px solid #bdc7d8;color:#3b5998;width:95px}
+.uiDatepicker input.textField[disabled]{cursor:auto}
+.uiDatepickerGray input.textField{background-image:url(https://s-static.ak.fbcdn.net/rsrc.php/v2/yw/x/fw7mhaWuh3r.png)}
+.uiDatepickerRTL input.textField{background-position:4px 50%}
+.uiDatepickerCalendar{margin-top:3px;min-width:210px}
+.uiDatepickerCalendar table{width:100%}
+.uiDatepickerCalendar .prevMonth, .uiDatepickerCalendar .nextMonth, .uiDatepickerCalendar .monthTitle{background:#6d84b7;border-top:1px solid #3a589b;color:#fff;font-weight:bold;padding-top:1px;text-align:center}
+.uiDatepickerCalendar .prevMonth{border-left:1px solid #3a589b}
+.uiDatepickerCalendar .nextMonth{border-right:1px solid #3a589b}
+.uiDatepickerCalendar th.first{border-left:1px solid #777}
+.uiDatepickerCalendar th.last{border-right:1px solid #777}
+.uiDatepickerCalendar .days{border:1px solid #777;border-top:none;border-bottom:2px solid #293e6c}
+.uiDatepickerCalendar .days table{background:#fff;border-collapse:separate}
+.uiDatepicker .textField, .uiDatepickerCalendar .prevMonth, .uiDatepickerCalendar .nextMonth, .uiDatepickerCalendar .dayCell{cursor:pointer}
+.uiDatepickerCalendar .prevMonth{border-left-width:1px}
+.uiDatepickerCalendar .nextMonth{border-right-width:1px}
+.uiDatepickerCalendar th{color:#555;background:#f2f2f2;border-bottom:1px solid #bbb;font-size:9px;font-weight:bold;padding:3px 1px;text-align:center;word-break:break-word}
+.uiDatepickerCalendar td{height:20px;padding:0;text-align:center}
+.uiDatepickerCalendar .dayTable td{border:1px solid #fff;color:#999;width:14.29%}
+.uiDatepickerCalendar .dayTable td.dayCell{color:#666}
+.uiDatepickerCalendar .dayCell:hover{color:#3b5998;border-color:#bec8dd;background-color:#dfe4ee;text-decoration:none}
+.uiDatepickerCalendar .selected{background-color:#ddd;font-weight:bold}
+.fbInsightsContent .insightsDateHeader{background-color:#fff;border-top:none}
+.insightsDateHeader .loadingIndicator{background:url(https://s-static.ak.fbcdn.net/rsrc.php/v2/y4/x/GsNJNwuI-UM.gif) no-repeat 0 0;float:right;height:11px;margin-right:15px;position:relative;top:5px;width:16px}
+.insightsDateRangeCustom{background-color:#fff;border:1px solid #999;padding-right:15px;position:absolute;right:0;top:26px;z-index:100}
+.insightsDateRangeCustom .dateselectpro{float:left}
+.insightsDateRangeCustom .dateselectpro .datebox .inputtext{background-image:url(https://s-static.ak.fbcdn.net/rsrc.php/v2/y_/x/4KeTdR_xXgU.gif);background-position:right 50%;border:0;color:#3b5998;cursor:pointer;padding-left:3px;width:110px}
+.insightsDateRangeCustom .dateselectpro .datebox{border:1px solid #bdc7d8;padding:0 4px 0 0}
+.uiHeader .insightsDateBar{margin:5px 15px 5px 10px;position:relative;text-align:right}
+.uiHeader .insightsDateBarChildren{float:left;text-align:left}
+.insightsDateSelector{float:right}
+.insightsDateSelector .insightsDateButtons{-webkit-box-shadow:none;float:left}
+.insightsDateRange{background-color:#fff;border:1px solid #999;float:left;margin-left:-1px;text-align:left}
+.insightsDateRange .insightsDateRangeInput{background-image:url(https://s-static.ak.fbcdn.net/rsrc.php/v2/yG/x/DDIDjLBa4mr.gif);background-position:157px 50%;background-repeat:no-repeat;border:none;cursor:pointer;padding-right:20px;width:150px}
+.open .insightsDateRangeInput{background-image:url(https://s-static.ak.fbcdn.net/rsrc.php/v2/yq/x/c_ITNz3DLu9.gif)}
+.fbInsightsStatisticList{margin-left:20px}
+.fbInsightsStatisticListFloatRight{float:right}
+.fbInsightsStatisticFigure{font-weight:bold;vertical-align:baseline}
+.fbInsightsStatisticNumber{display:inline;font-family:helvetica, arial;color:#333;font-size:23px;line-height:32px}
+.fbInsightsStatisticChange{display:inline}
+.fbInsightsStatistic .better{color:#7ea65a}
+.fbInsightsStatistic .worse{color:#d44f30}
+.fbInsightsStatistic .steady{color:#3b5998}
+.fbInsightsStatisticFigure .img{margin-left:4px;margin-right:2px}
+.page_browser_full_width{width:980px;margin:0 auto;position:relative}
+.page_browser_full_width .page_browser_title{font-size:42px}
+.page_browser_like_button{position:absolute;right:0;top:20px}
+.page_browser_learn_more{margin:-15px 0}
+.page_browser_image{width:83px;height:83px}
+.page_browser_unit_text{width:140px}
+.page_browser_page_name{color:#000;overflow:hidden;text-overflow:ellipsis;width:140px}
+.page_browser_no_results{font-size:17px;font-weight:bold;margin:100px 300px}
+.page_browser_filter_list{border-bottom:1px solid #ccc}
+.page_browser_loading{position:relative;top:4px}
+.page_browser_unit{border:1px solid #fff;-webkit-border-radius:3px;display:block;margin:-5px;padding:4px;position:relative;-webkit-transition:background-color, border-color .3s}
+.page_browser_unit:hover, .page_browser_unit_loading{background:#e1e6ef;border-color:#b7c1d9;text-decoration:none}
+.page_browser_unit_liked, .page_browser_unit_liked:hover{background:#596ea7;border-color:#2c4388}
+.page_browser_unit_liked, .page_browser_unit_liked .fcg, .page_browser_unit_liked .page_browser_page_name{color:#fff}
+.page_browser_active{background:url(https://s-static.ak.fbcdn.net/rsrc.php/v2/y5/x/jZBV2CzYMZK.png) no-repeat center center;background-color:rgba(255,255,255,0.7);color:#3b5998;font-weight:bold;height:83px;left:4px;line-height:130px;position:absolute;text-align:center;top:4px;opacity:0;-webkit-transition:opacity .3s;width:83px}
+.async_saving .page_browser_active{background-image:none;line-height:110px}
+.page_browser_unit:hover .page_browser_active, .page_browser_unit_liked .page_browser_active, .async_saving .page_browser_active{opacity:1}
+.page_browser_unit_liked .page_browser_liked, .page_browser_unit_unliked:hover .page_browser_like, .page_browser_unit_liked:hover .page_browser_unlike{display:inline}
+.page_browser_like, .page_browser_liked, .page_browser_unlike, .page_browser_unit:hover .page_browser_liked, .page_browser_page_link, .async_saving .page_browser_like, .async_saving .page_browser_liked, .async_saving .page_browser_unlike, .async_saving:hover .page_browser_like, .async_saving:hover .page_browser_liked, .async_saving:hover .page_browser_unlike{display:none}
+.page_browser_unit:hover .page_browser_page_link{display:block;position:absolute;right:5px;bottom:5px}
+.page_browser_page_link:hover{text-decoration:underline}
+.page_browser_olympics_link{background:url(https://s-static.ak.fbcdn.net/rsrc.php/v2/yA/x/tmqxHYvrvCy.png) no-repeat left center;padding-left:34px}
+.UICompatibilityFrame_Content .pandemic_bar_wrapper{padding-top:15px}
+.pages_manager .pandemic_bar_wrapper,
+.pages_edit .pandemic_bar_wrapper{padding-top:0}
+.pandemic_bar{background-color:#fafafa;border-bottom:1px solid #aaa;border-top:1px solid #d0d0d0;padding-right:15px}
+.pandemic_bar .manager_icon{background:url(https://s-static.ak.fbcdn.net/rsrc.php/v2/yV/x/ODu8zDJacTy.gif) no-repeat left center;float:left;margin:0 8px 0 20px;padding:5px 0 6px;width:16px}
+.piped_nav{border-left:1px solid #898989;float:left;margin:-1px 0;padding:5px 0 8px 10px}
+.piped_nav .selected{font-weight:bold}
+.piped_nav .pipe{padding:0 5px}
+.pandemic_bar .create_button,
+.adboard_header .create_button{border:1px solid #3b6e22;float:right;position:relative}
+.pandemic_bar .create_button a,
+.adboard_header .create_button a{background:#67a54b;border-top:1px solid #95bf82;color:#fff;display:block;font-size:13px;font-weight:bold;padding:3px 16px 5px 16px;text-align:center}
+.page_unavailable{padding:10px}
+div.paging{float:left}
+.paging input{width:15px}
+.uiPillButton{display:inline-block;font-size:11px;font-weight:bold;line-height:15px;padding:1px 6px 2px}
+.uiPillButton:hover{text-decoration:none}
+.uiPillButtonSelected{background-color:#6d84b4;border:1px solid #3b5998;-webkit-border-radius:2px;color:#fff;cursor:default;padding:0 5px 1px}
+.breakdown-list{width:230px}
+div.breakdown-list-wide{width:260px}
+.breakdown-list .header{font-weight:bold;padding-bottom:4px;border-bottom:solid 1px #eee;margin-bottom:4px}
+.breakdown-list-table{overflow:visible;border-collapse:collapse;width:100%}
+.breakdown-list-table td{line-height:15px;overflow:visible;padding:0 0 7px 0;vertical-align:top}
+.breakdown-list-table td.breakdown-count{text-align:right;font-weight:bold;padding-right:6px;white-space:nowrap}
+.breakdown-list-table td.breakdown-key{text-align:left;width:100%}
+.breakdown-list-table sup{display:inline-block;margin-top:-4px}
+.show-more-wrap{margin-top:5px}
+.breakdown-list .ufb-glossary-tip{margin-right:-10px}
+.insights-header{background-color:#f2f2f2;border-top:1px solid #e2e2e2;line-height:14px;margin-bottom:10px;padding:4px 5px 5px}
+.insights-header .header-title{font-weight:bold}
+.insights-header ul li.righthand{float:right}
+.insights-header .header-timestamp{color:gray;margin-left:5px}
+.insights-error{background-color:#ffebe8;border:1px solid #dd3c10;padding:10px;margin:10px 0 10px 0}
+.insights-warning{background-color:#edeff4;border:1px solid #d8dfea;padding:10px}
+.insights-section{margin-bottom:20px;padding:0 5px}
+.insights-toolbar-main{margin:0 -7px 10px;padding:6px 7px}
+.insights-toolbar-main .insights-date-indicator{padding-top:3px}
+.insights-toolbar{position:relative}
+.insights-toolbar .insightsDateSelector{float:left}
+.insights-toolbar .insightsDateRange{margin-left:0}
+.insights-toolbar .insightsDateRangeCustom{left:0;right:auto;top:35px}
+.insights-toolbar-main .export-button .customimg,
+.insights-toolbar .export-button .customimg{margin-top:3px}
+.insights-demographics{position:relative}
+.insights-demographics .error-message{background-color:#edeff4;border:1px solid #d8dfea;font-weight:bold;position:absolute;padding:10px;top:40%}
+.insights-demographics .sample-data{opacity:.3;ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)"}
+.insights-gender-age .info{padding:2px 5px 3px}
+.insights-gender-age .info .pct{font-weight:bold}
+.insights-gender-age .age{display:inline-block;padding:2px 0 3px;font-size:9px;color:#666;width:36px}
+.insights-gender-age .bar{display:inline-block;position:relative}
+.insights-gender-age .female .bar{background-color:#9daccb}
+.insights-gender-age .male .bar{background-color:#6c83b2}
+.insights-gender-age .label{padding:2px 0;color:#fff;font-weight:bold;width:100%;position:absolute}
+.insights-gender-age{width:100%}
+.insights-gender-age td{text-align:center}
+.insights-gender-age .female td{vertical-align:bottom;border-bottom:solid 1px #ddd}
+.insights-gender-age .male td{vertical-align:top;border-top:solid 1px #ccc}
+.insights-gender-age .info{width:100px;text-align:right;padding:2px 5px 3px 0}
+.insights-gender-age .info .pct{padding-left:5px}
+.insights-gender-age .ages td{background-color:#f6f6f6;border-top:solid 1px #fff;height:auto}
+.insights-gender-age .ages .begin{border-left:solid 1px #ddd}
+.insights-gender-age .ages .end{border-right:solid 1px #ddd;width:5px}
+.insights-gender-age .bar{width:93%}
+.insights-gender-age .female .bar{border-bottom:solid 1px #8996b1;vertical-align:bottom;bottom:-1px}
+.insights-gender-age .male .bar{border-top:solid 1px #56698e;vertical-align:top;top:-1px}
+.insights-gender-age .label{padding:2px 0 0;left:0}
+.insights-gender-age .female .label{bottom:3px}
+.insights-gender-age .short .label{color:#666}
+.insights-gender-age .female .short .label{top:-18px}
+.insights-gender-age .male .short .label{bottom:-15px}
+.insights-gender-age .empty{display:none}
+.insights-summary{border-bottom:1px solid #e7e7e7;padding:0 0 10px 0}
+.insights-summary .fbInsightsStatisticNumber{font-size:20px}
+.insights-breakdown-graph{padding:15px}
+.insights-breakdown-graph .graph-canvas{position:relative;width:125px;height:125px}
+.insights-breakdown-graph .fbInsightsStatistic{width:133px}
+.insights-breakdown-graph .breakdown-graph-legend{width:133px}
+.insights-breakdown-graph .breakdown-small-stat{width:100%;text-align:right;color:gray}
+.insights-breakdown-graph .breakdown-graph-legend td{vertical-align:top}
+.post-box-table{margin-top:20px}
+.post-box-table .ufb-dataTable-header-container{border-left:1px solid #999;overflow:visible;z-index:-1;position:static}
+.post-box-table .ufb-dataTable-header-cell:hover{cursor:pointer}
+.post-box-table .ufb-dataTable-header-row .ufb-dataTable-header-text{white-space:normal;overflow:visible;height:auto}
+.post-box-table .ufb-dataTable-header-cell sup{padding-left:3px;vertical-align:top}
+.post-box-table .ufb-dataTable-container{overflow:visible}
+.post-box-table .ufb-dataTable-pack .ufb-dataList-row, .post-box-table .ufb-dataTable-pack .ufb-dataList-row_odd, .post-box-table .ufb-dataTable-row_selected, .post-box-table .ufb-dataList_blured .ufb-dataTable-row_selected{background:none;color:#333}
+.post-box-table .ufb-dataTable-cell{border-bottom:1px solid #e7e7e7}
+.post-box-table .ufb-dataTable-cell-wrap{padding:10px 6px;height:20px}
+.post-box-table .ufb-dataList_blured .ufb-dataTable-row_selected
+.ufb-dataTable-cell{border-color:#e7e7e7}
+.post-box-table .ufb-dataTable-row_selected +
+.ufb-dataTable-row_selected .ufb-dataTable-cell{padding-top:10px;border-top:0}
+.post-box-table td.post-date{overflow:visible}
+.post-box-icon{position:absolute;width:16px;left:0;top:0;vertical-align:middle}
+.post-box-message{padding:1px 0 1px 21px;position:relative;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;display:block}
+.post-box-inline-bar-graph{background-color:#d7dfea}
+.post-box-inline-bar-graph .inline-bar-graph-value{padding:3px 4px;white-space:nowrap}
+.story_type_selector .story_type_icon{margin-right:5px}
+.older-posts-container{margin-top:20px}
+.older-posts-content{display:block;background-color:#edeff4;border:1px solid #d8dfea;padding:10px 15px}
+.older-posts-hoverable:hover{background-color:#d8dfea}
+.older-posts-container .loading-icon{text-align:center}
+.empty-post-box{position:relative;border-bottom:1px solid #e7e7e7;color:gray;padding:14px 15px}
+.post-preview-close-button{float:right;position:relative}
+.post-preview{padding:10px}
+.post-preview-content{word-break:break-word}
+.post-preview-message{margin:0 0 5px 0;color:#000}
+.post-preview-actor-name{font-weight:bold;padding-bottom:3px}
+.post-preview-attachments{margin:10px 0;color:gray}
+.post-preview-attachments img{max-width:121px;max-height:121px}
+.post-preview .attachment-title{font-weight:bold}
+.post-preview .attachment-description{margin-top:5px}
+.post-privacy{margin-left:2px}
+.post-privacy .privacy-icon{padding-left:4px}
+.post-preview-profile-img img{width:50px;height:50px}
+
+#bootloader_z90jv { height: 42px; }

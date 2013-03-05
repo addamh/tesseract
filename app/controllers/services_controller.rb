@@ -29,7 +29,6 @@ class ServicesController < ApplicationController
       redirect_to root_url
     else  # create account
       @newuser = User.new
-      @newuser.profile = Profile.new
       @newuser.name = session[:authhash][:name]
       @newuser.email = session[:authhash][:email]
       @newuser.username = session[:authhash][:username]
@@ -48,7 +47,7 @@ class ServicesController < ApplicationController
         @newuser.save!
         
         flash[:notice] = 'Your account has been created and you have been signed in!'
-        redirect_to edit_user_path(@newuser.id)
+        redirect_to edit_users_url
       else
         flash[:error] = 'This is embarrassing! There was an error while creating your account from which we were not able to recover.'
         redirect_to root_url

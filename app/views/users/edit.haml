@@ -3,15 +3,8 @@
   %br/
   Email : #{f.text_field :email}
   %br/
-  = f.fields_for :profile_attributes do |p|
-    Website: #{p.text_field :website}
-    %br/
-    Preferred payment type: #{p.text_field :pref_payment}
-    %br/
-    Preferred rate, $/hr: #{p.text_field :rate}
-    
-    %br/
   = f.submit
+
 
 //= @user.inspect
 / %br

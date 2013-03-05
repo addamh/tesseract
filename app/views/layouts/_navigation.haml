@@ -12,7 +12,8 @@
       %a
         Employers
     %li
-      = link_to "My Profile", user_path(current_user.id)
+      %a
+        My Profile
 %ul.nav{:style => "float: right;"}
   - if user_signed_in?
     %li.dropdown
@@ -24,7 +25,7 @@
         %b.caret
       %ul.dropdown-menu
         %li 
-          = link_to "Edit Profile", edit_user_path(current_user.id)
+          //= link_to "My Profile", edit_users_url
         %li 
           = link_to "Settings", services_path
         %li

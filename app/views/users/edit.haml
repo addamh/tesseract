@@ -1,25 +1,23 @@
+%h2 Profile Information
 = form_for @user, :method => :put, :url => user_path do |f|
   Name: #{f.text_field :name}
   %br/
-  Email : #{f.text_field :email}
+  Desired Username: #{f.text_field :username}
   %br/
-  = f.fields_for :profile_attributes do |p|
-    Website: #{p.text_field :website}
-    %br/
-    Preferred payment type: #{p.text_field :pref_payment}
-    %br/
-    Preferred rate, $/hr: #{p.text_field :rate}
-    
-    %br/
+  Email: #{f.text_field :email}
+  %br/
+  Website: #{f.text_field :website}
+  %br/
+  Preferred payment type: #{f.text_field :pref_payment}
+  %br/
+  Preferred rate, $/hr: #{f.text_field :rate}
+  %br/
+  %br/
+  / %h2 Resume
+  / = f.file_field :resume
+  %br/
+  / %h2 Skills
+  / = f.fields_for :skills_attributes do |builder|
+  /   = render "skills_fields", :f => builder
+  / %br/
   = f.submit
-
-//= @user.inspect
-/ %br
-/ %br
-/ - current_user.services.each do |s|
-/   = s.inspect
-/   %img{:src => s.avatar_url}
-/   %br
-/ %br
-/ %br
-/ = session.inspect

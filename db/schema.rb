@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120806034741) do
+ActiveRecord::Schema.define(:version => 20130306124049) do
 
   create_table "availabilty_statuses", :force => true do |t|
     t.string   "name"
@@ -25,21 +25,6 @@ ActiveRecord::Schema.define(:version => 20120806034741) do
     t.date     "achieved"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  end
-
-  create_table "profiles", :force => true do |t|
-    t.integer  "user_id"
-    t.string   "type"
-    t.integer  "views"
-    t.integer  "contacts"
-    t.integer  "points"
-    t.text     "note"
-    t.integer  "rate"
-    t.string   "pref_payment"
-    t.string   "website"
-    t.binary   "resume"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
   end
 
   create_table "services", :force => true do |t|
@@ -59,6 +44,13 @@ ActiveRecord::Schema.define(:version => 20120806034741) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "skills_users", :id => false, :force => true do |t|
+    t.integer "user_id"
+    t.integer "skill_id"
+  end
+
+  add_index "skills_users", ["user_id", "skill_id"], :name => "index_skills_users_on_user_id_and_skill_id"
+
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
@@ -68,6 +60,14 @@ ActiveRecord::Schema.define(:version => 20120806034741) do
     t.boolean  "admin"
     t.datetime "last_seen"
     t.integer  "current_avatar"
+    t.binary   "resume"
+    t.string   "website"
+    t.string   "pref_payment"
+    t.integer  "rate"
+    t.text     "note"
+    t.integer  "points"
+    t.integer  "contacts"
+    t.integer  "views"
   end
 
 end

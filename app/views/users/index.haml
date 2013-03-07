@@ -1,10 +1,33 @@
 = image_tag "tesseractblack.png", :size => "400x333"
-This page is accessible by all users!
-%br
-%br
-%br
+%h2 Welcome to Tesseract!
+%br/
 - if user_signed_in?
-  - if current_user.name == "Addam Hardy"
-    - @users.each do |u|
-      = u.inspect
-      %br
+  %h4 Developers
+  %br/
+  %table{:class => "table"}
+    %thead
+      %th Name
+      %th Username
+      %th Website
+      %th Last Seen
+      %tbody
+      - @users.each do |u|
+        %tr
+        %td= link_to u.name, u
+        %td= u.username
+        %td= u.website
+        %td= u.last_seen
+        %tr/
+    %tbody/
+    %table/
+%br/
+%br/  
+/ This page is accessible by all users!
+/ %br
+/ %br
+/ %br
+/ - if user_signed_in?
+/   - if current_user.name == "Addam Hardy"
+/     - @users.each do |u|
+/       = u.inspect
+/       %br

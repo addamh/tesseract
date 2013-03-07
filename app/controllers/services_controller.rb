@@ -29,7 +29,7 @@ class ServicesController < ApplicationController
       redirect_to root_url
     else  # create account
       @newuser = User.new
-      @newuser.profile = Profile.new
+      # @newuser.profile = Profile.new
       @newuser.name = session[:authhash][:name]
       @newuser.email = session[:authhash][:email]
       @newuser.username = session[:authhash][:username]

@@ -14,11 +14,11 @@ class UsersController < ApplicationController
   end
   
   def update
-    @user = User.find(params[:id])
+    @user = current_user # User.find(params[:id])
     # uploaded_io = params[:user][:resume]
     # File.open(Rails.root.join('public', 'resume', uploaded_io.original_filename), 'wb') do |file|
     #   file.write(uploaded_io.read)
-    # end    
+    # end
     if @user.update_attributes(params[:user])
       redirect_to edit_user_path, :notice => "User updated"
     else
@@ -26,9 +26,9 @@ class UsersController < ApplicationController
     end
   end
 
-  def updateskills
-    @user = User.find(params[:id])
-  end
+  # def updateskills
+  #   @user = User.find(params[:id])
+  # end
   
   def destroy
     @user = current_user

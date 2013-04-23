@@ -5,13 +5,23 @@ Email: #{@user.email}
 %br/
 Website: #{@user.website}
 %br/
-%h2 Credentials
+%h3 Credentials
+- @user.credentials.each do |c|
+  c.location
+  %br/
+  c.title
+  %br/
+  c.achieved
+  %br/
 %br/
-%h2 Skills
+%h3 Skills
+- @user.skills.each do |s|
+  #{s.name}
+  %br/
+%h3 Resume
+#{@user.resume}
 %br/
-%h2 Resume
-%br/
-%h2 Availability
+%h3 Availability
 
 / = form_for @user, :method => :put, :url => user_path do |f|
 /   Name: #{f.text_field :name}

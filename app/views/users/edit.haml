@@ -1,23 +1,12 @@
 %h2 Profile Information
-= form_for @user, :method => :put, :url => user_path do |f|
-  Name: #{f.text_field :name}
-  %br/
-  Desired Username: #{f.text_field :username}
-  %br/
-  Email: #{f.text_field :email}
-  %br/
-  Website: #{f.text_field :website}
-  %br/
-  Preferred payment type: #{f.text_field :pref_payment}
-  %br/
-  Preferred rate, $/hr: #{f.text_field :rate}
-  %br/
-  %br/
-  / %h2 Resume
-  / = f.file_field :resume
-  %br/
-  / %h2 Skills
-  / = f.fields_for :skills_attributes do |builder|
-  /   = render "skills_fields", :f => builder
-  / %br/
-  = f.submit
+= simple_form_for @user, :method => :put, :html => { :class => 'form-horizontal' }, :url => user_path do |f|
+  = f.input :name
+  = f.input :username
+  = f.input :website
+  = f.input :pref_payment, label: 'Payment Method'
+  = f.input :rate, collection: 40..100, label: 'Rate, $/hr'
+  = f.input :resume, as: :text
+  = f.collection_check_boxes :skill_ids, Skill.all, :id, :name
+  %p
+  = f.button :submit
+  = link_to 'Cancel', :back

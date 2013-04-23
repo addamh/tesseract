@@ -6,8 +6,8 @@ class User < ActiveRecord::Base
 
   accepts_nested_attributes_for :skills, :credentials
     
-  attr_accessible :name, :email, :username, :last_seen, :avatar_url, :profile, :contacts, :note, :points, :pref_payment, :rate, :resume, :type, :views, :website, :skills_attributes
+  attr_accessible :name, :email, :username, :last_seen, :avatar_url, :profile, :contacts, :note, :points, :pref_payment, :rate, :resume, :type, :views, :website, :skills_attributes, :skill_ids, :credentials_attributes
   
-  validates_presence_of :name, :email
+  validates_presence_of :name, :username, :email
   validates_uniqueness_of :email, :username
 end

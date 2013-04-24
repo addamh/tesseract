@@ -6,11 +6,9 @@
       %a
         Jobs
     %li
-      %a
-        Developers
+      = link_to "Developers"
     %li
-      %a
-        Employers
+      = link_to "Employers"
     %li
       = link_to "My Profile", user_path(current_user.id)
 %ul.nav{:style => "float: right;"}
@@ -19,7 +17,7 @@
       %a.dropdown-toggle{:href => "#", :data => {:toggle => "dropdown"}}
         - if current_user.current_avatar != nil
           - avatar_url = Service.find(current_user.current_avatar).avatar_url
-          %img{:src => avatar_url, :height => 25, :width => 25, :style => "border: 1px solid grey; margin-right: 5px;"}
+          %img{:src => current_user.avatar_url, :height => 25, :width => 25, :style => "border: 1px solid grey; margin-right: 5px;"}
         = current_user.name
         %b.caret
       %ul.dropdown-menu

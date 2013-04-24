@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :skills, :credentials
     
   # attr_accessible :name, :email, :username, :last_seen, :avatar_url, :profile, :contacts, :note, :points, :pref_payment, :rate, :resume, :type, :views, :website, :skills_attributes, :skill_ids, :credentials_attributes
-  attr_accessible :name, :email, :username, :last_seen, :avatar_url, :avatar, :profile, :contacts, :note, :points, :pref_payment, :rate, :resume, :type, :views, :website, :skills_attributes, :skill_ids, :credentials_attributes
+  attr_accessible :name, :email, :username, :last_seen, :avatar_url, :avatar, :profile, :contacts, :note, :points, :pref_payment, :rate, :resume, :type, :views, :website, :skills_attributes, :skill_ids, :credentials_attributes, :credential_ids, :availability
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
   has_attached_file :resume
   validates_presence_of :name, :email

@@ -1,9 +1,11 @@
+%img{:src => current_user.avatar_url, :height => 50, :width => 50, :style => "border: 1px solid grey; margin-right: 5px; align: right"}
 %h2 #{@user.name}
 Username: #{@user.username}
 %br/
-Email: #{@user.email}
+Email: 
+= mail_to @user.email
 %br/
-Website: #{@user.website}
+= link_to "Website", @user.website
 %br/
 %h3 Credentials
 - @user.credentials.each do |c|
@@ -19,5 +21,8 @@ Website: #{@user.website}
   #{s.name}
   %br/
 %h3 Resume
-= link_to "View", @user.resume.url
+/ = link_to "View", @user.resume.url if @user.resume_file_name?
+= if @user.resume_file_name? then link_to("View", @user.resume.url) else "No resume supplied." end
+
 %h3 Availability
+#{@user.availability}

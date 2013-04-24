@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130423134456) do
+ActiveRecord::Schema.define(:version => 20130424181607) do
 
   create_table "availabilty_statuses", :force => true do |t|
     t.string   "name"
@@ -77,6 +77,8 @@ ActiveRecord::Schema.define(:version => 20130423134456) do
     t.string   "resume_content_type"
     t.integer  "resume_file_size"
     t.datetime "resume_updated_at"
+    t.text     "availability"
+    t.string   "avatar_url"
   end
 
 end

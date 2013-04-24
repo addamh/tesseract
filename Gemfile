@@ -8,7 +8,6 @@ gem 'omniauth-twitter'
 gem 'omniauth-openid'
 gem 'omniauth-google-apps'
 gem 'omniauth-linkedin'
-gem 'redcarpet', '1.17.2'
 gem "paperclip", "~> 3.0"
 gem "haml"
 gem 'bootstrap-sass'

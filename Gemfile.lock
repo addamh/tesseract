@@ -65,7 +65,7 @@ GEM
     fssm (0.2.10)
     haml (4.0.2)
       tilt
-    hashie (2.0.3)
+    hashie (2.0.4)
     hike (1.2.2)
     httparty (0.11.0)
       multi_json (~> 1.0)
@@ -160,7 +160,6 @@ GEM
     rake (10.0.4)
     rdoc (3.12.2)
       json (~> 1.4)
-    redcarpet (1.17.2)
     redis (3.0.4)
     redis-namespace (1.2.1)
       redis (~> 3.0.0)
@@ -248,7 +247,6 @@ DEPENDENCIES
   pg
   rack-timeout
   rails (= 3.2.6)
-  redcarpet (= 1.17.2)
   redis
   resque
   resque-history

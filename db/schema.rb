@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130307172419) do
+ActiveRecord::Schema.define(:version => 20130423134456) do
 
   create_table "availabilty_statuses", :force => true do |t|
     t.string   "name"
@@ -55,8 +55,8 @@ ActiveRecord::Schema.define(:version => 20130307172419) do
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
     t.string   "username"
     t.boolean  "admin"
     t.datetime "last_seen"
@@ -69,6 +69,14 @@ ActiveRecord::Schema.define(:version => 20130307172419) do
     t.integer  "points"
     t.integer  "contacts"
     t.integer  "views"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.string   "resume_file_name"
+    t.string   "resume_content_type"
+    t.integer  "resume_file_size"
+    t.datetime "resume_updated_at"
   end
 
 end

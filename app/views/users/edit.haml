@@ -5,8 +5,11 @@
   = f.input :website
   = f.input :pref_payment, label: 'Payment Method'
   = f.input :rate, collection: 40..100, label: 'Rate, $/hr'
-  = f.input :resume, as: :text
-  = f.collection_check_boxes :skill_ids, Skill.all, :id, :name
-  %p
+  = f.input :resume, :as => :file, :hint => @user.resume_file_name  #, :required => true 
+  /= f.collection_check_boxes :skill_ids, Skill.all, :id, :name, :item_wrapper_class => 'checkbox_container'
+  = f.input :skill_ids, :as => :check_boxes, :collection => Skill.all, :label_method => :name, :value_method => :id,  :item_wrapper_class => 'inline', label: 'Skills'
+  /= f.file_field :avatar, label: 'Avatar'
   = f.button :submit
   = link_to 'Cancel', :back
+
+%h2 Credentials

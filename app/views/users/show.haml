@@ -3,9 +3,9 @@
 Username: #{@user.username}
 %br/
 Email: 
-= mail_to @user.email
+= if @user.email? then mail_to @user.email else "No email supplied." end
 %br/
-= link_to "Website", @user.website
+= if @user.website? then link_to "Website", @user.website else "No website supplied." end
 %br/
 %h3 Credentials
 - @user.credentials.each do |c|

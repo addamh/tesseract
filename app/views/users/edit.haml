@@ -1,5 +1,5 @@
 %h2 Profile Information
-= simple_form_for @user, :method => :put, :html => { :class => 'form-horizontal' }, :url => user_path do |f|
+= simple_form_for current_user, :method => :put, :html => { :class => 'form-horizontal' }, :url => user_path do |f|
   = f.input :name
   = f.input :username
   = f.input :website

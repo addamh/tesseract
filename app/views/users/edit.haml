@@ -14,8 +14,6 @@
   = f.fields_for :credentials, :html => {:class => 'form-inline'} do |builder|
     = render 'credentials_fields', :f => builder
     %br/
-  
-  
   = f.button :submit
   = link_to 'Cancel', :back
 %br/

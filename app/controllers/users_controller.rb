@@ -22,6 +22,13 @@ class UsersController < ApplicationController
     end
   end
 
+  def new
+    @user = User.new
+    3.times do
+      credential = @user.credentials.build
+    end
+  end
+
   def create
     @user = User.create( params[:user] )
   end

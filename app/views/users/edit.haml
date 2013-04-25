@@ -1,5 +1,5 @@
 %h2 Profile Information
-= simple_form_for current_user, :method => :put, :html => { :class => 'form-horizontal' }, :url => user_path do |f|
+= simple_form_for @user, :method => :put, :html => { :class => 'form-horizontal' }, :url => user_path do |f|
   = f.input :name
   = f.input :username
   = f.input :website
@@ -8,9 +8,46 @@
   = f.input :rate, collection: 40..100, label: 'Rate, $/hr'
   = f.input :availability, as: :text, label: "Availability Status", placeholder: 'Short description of your availability'
   = f.input :resume, :as => :file, :hint => @user.resume_file_name  #, :required => true 
-  /= f.collection_check_boxes :skill_ids, Skill.all, :id, :name, :item_wrapper_class => 'checkbox_container'
+  %h2 Skills
   = f.input :skill_ids, :as => :check_boxes, :collection => Skill.all, :label_method => :name, :value_method => :id,  :item_wrapper_class => 'inline', label: 'Skills'
+  %h2 Credentials
+  = f.fields_for :credentials, :html => {:class => 'form-inline'} do |builder|
+    = render 'credentials_fields', :f => builder
+    %br/
+  
+  
   = f.button :submit
   = link_to 'Cancel', :back
+%br/
+%br/
 
-%h2 Credentials
+/ 
+/ %h2 Credentials
+/ 
+/ %table{:class => "table table-striped table-hover"}
+/   %thead
+/     %th Location
+/     %th Title
+/     %th Date
+/     %th
+/     %tbody
+/     - @user.credentials.each do |d|
+/       %tr
+/       %td= d.location
+/       %td= d.title
+/       %td= d.achieved
+/       %td= button_to "delete", d
+/       %tr/
+/       %tbody/
+/       %table/
+/ = simple_form_for :credentials_attributes, :html => { :class => 'form-inline' }, :url => user_path do |c|
+/   = c.label :location
+/   = c.text_field :location, placeholder: 'Company Name'
+/   = c.label :title
+/   = c.text_field :title, placeholder: 'Position Held'
+/   = c.label :achieved
+/   = c.text_field :achieved, placeholder: 'Dates'
+/   %br/
+/   %br/
+/   = c.button :submit
+/   = link_to 'Cancel', :back

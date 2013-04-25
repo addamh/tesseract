@@ -7,14 +7,13 @@ Email:
 %br/
 = if @user.website? then link_to "Website", @user.website else "No website supplied." end
 %br/
-%h3 Credentials
-- @user.credentials.each do |c|
-  c.location
-  %br/
-  c.title
-  %br/
-  c.achieved
-  %br/
+/ - @user.credentials.each do |c|
+/   c.location
+/   %br/
+/   c.title
+/   %br/
+/   c.achieved
+/  %br/
 %br/
 %h3 Skills
 - @user.skills.each do |s|
@@ -26,3 +25,18 @@ Email:
 
 %h3 Availability
 #{@user.availability}
+%h3 Credentials
+%table{:class => "table table-striped table-hover"}
+  %thead
+    %th Location
+    %th Title
+    %th Date
+  %tbody
+    - @user.credentials.each do |c|
+      %tr
+      %td= c.location
+      %td= c.title
+      %td= c.achieved
+      %tr/
+  %tbody/
+  %table/

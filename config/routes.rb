@@ -7,6 +7,8 @@ Tesseract::Application.routes.draw do
   match '/auth/:service/callback' => 'services#create' 
   match '/auth/failure' => 'services#failure'
 
+  match '/search' => 'searches#search', :as => 'search'
+  
   resources :services, :only => [:index, :create, :destroy] do
     collection do
       get 'signin'
@@ -19,6 +21,6 @@ Tesseract::Application.routes.draw do
 
   # used for the demo application only
   resources :users
-   
+  resources :searches
   root :to => "users#index"
 end

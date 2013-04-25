@@ -1,0 +1,19 @@
+/ = params
+/ = @users.first
+%h2 Search Results
+%table{:class => "table table-striped table-hover"}
+  %thead
+    %th Name
+    %th Username
+    %th Website
+    %th Last Seen
+    %tbody
+    - @users.each do |u|
+      %tr
+      %td= link_to u.name, u
+      %td= u.username
+      %td= u.website
+      %td= u.last_seen
+      %tr/
+  %tbody/
+  %table/

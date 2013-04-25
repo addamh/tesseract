@@ -1,0 +1,10 @@
+%h2 Advanced Search
+
+= form_tag(search_url, :method => :post) do
+  = label_tag :name
+  %br/
+  = text_field_tag :name
+  = label_tag :category_id
+  %br/
+  = select_tag(:skill_id, options_from_collection_for_select(Skill.all, :id, :name))
+  = submit_tag "Search"

@@ -5,6 +5,8 @@
   %p
     = text_field_tag :search, params[:search]
     = submit_tag "Search", :name => nil
+    %br/
+    = link_to "Advanced Search", new_search_path
   %p
 - if user_signed_in?
   %h4 Latest Developers

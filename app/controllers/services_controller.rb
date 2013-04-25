@@ -34,7 +34,9 @@ class ServicesController < ApplicationController
       @newuser.email = session[:authhash][:email]
       @newuser.username = session[:authhash][:username]
       @newuser.last_seen = Time.now
-
+      @newuser.credentials.build
+      @newuser.credentials.build
+      @newuser.credentials.build      
       @newuser.services.build(:provider => session[:authhash][:provider], :uid => session[:authhash][:uid], :uname => session[:authhash][:name], :uemail => session[:authhash][:email], :avatar_url => session[:authhash][:avatar_url])
       
       

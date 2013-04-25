@@ -13,18 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20130424181607) do
 
-  create_table "_users_old_20120805", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-    t.string   "username"
-    t.integer  "skill_id"
-    t.integer  "credential_id"
-    t.boolean  "admin"
-    t.datetime "last_seen"
-  end
-
   create_table "availabilty_statuses", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false

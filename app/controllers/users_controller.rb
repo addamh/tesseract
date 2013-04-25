@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   
   def index
     @users = User.all
+    @users = User.search(params[:search])
   end
   
   def edit
@@ -19,13 +20,6 @@ class UsersController < ApplicationController
       redirect_to edit_user_path, :notice => "User updated"
     else
       redirect_to edit_user_path, :notice => "Update failed"
-    end
-  end
-
-  def new
-    @user = User.new
-    3.times do
-      credential = @user.credentials.build
     end
   end
 

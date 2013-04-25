@@ -1,6 +1,11 @@
 //= image_tag "tesseractblack.png", :size => "400x333"
 %h2 Welcome to Tesseract!
 %br/
+= form_tag users_path, :method => 'get' do
+  %p
+    = text_field_tag :search, params[:search]
+    = submit_tag "Search", :name => nil
+  %p
 - if user_signed_in?
   %h4 Latest Developers
   %br/

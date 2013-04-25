@@ -18,34 +18,3 @@
   = link_to 'Cancel', :back
 %br/
 %br/
-
-/ 
-/ %h2 Credentials
-/ 
-/ %table{:class => "table table-striped table-hover"}
-/   %thead
-/     %th Location
-/     %th Title
-/     %th Date
-/     %th
-/     %tbody
-/     - @user.credentials.each do |d|
-/       %tr
-/       %td= d.location
-/       %td= d.title
-/       %td= d.achieved
-/       %td= button_to "delete", d
-/       %tr/
-/       %tbody/
-/       %table/
-/ = simple_form_for :credentials_attributes, :html => { :class => 'form-inline' }, :url => user_path do |c|
-/   = c.label :location
-/   = c.text_field :location, placeholder: 'Company Name'
-/   = c.label :title
-/   = c.text_field :title, placeholder: 'Position Held'
-/   = c.label :achieved
-/   = c.text_field :achieved, placeholder: 'Dates'
-/   %br/
-/   %br/
-/   = c.button :submit
-/   = link_to 'Cancel', :back

@@ -1,6 +1,5 @@
-/ = params
-/ = @users.first
-%h2 Search Results
+- skill = params[:skill_id]
+%h2 Search Results for #{Skill.find(skill).name}
 %table{:class => "table table-striped table-hover"}
   %thead
     %th Name

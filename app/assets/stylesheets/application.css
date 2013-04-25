@@ -11,3 +11,7 @@
  *= require_self
  *= require_tree .
  */
+
+a.brand {
+	margin-top: 3px;
+}

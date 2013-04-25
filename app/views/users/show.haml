@@ -1,4 +1,4 @@
-%img{:src => @user.avatar_url, :height => 50, :width => 50, :style => "border: 1px solid grey; margin-right: 5px; align: right"}
+%img.profile_avatar{:src => Gravatar.new(current_user.email).image_url({:size => "256"}), :style => "border: 1px solid grey; margin-right: 5px; align: right"}
 %h2 #{@user.name}
 Username: #{@user.username}
 %br/

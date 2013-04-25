@@ -1,6 +1,5 @@
-= image_tag "tesseractwhite2.png", :size => "45x35", :class => 'brand', :style => "padding-right: 0px; padding-bottom: 2px; padding-top: 3px;"
 = link_to "Tesseract", root_path, :class => 'brand'
-%ul.nav
+%ul.nav{:style => "margin-top: 3px;"}
   - if user_signed_in?
     %li
       %a
@@ -16,8 +15,7 @@
     %li.dropdown
       %a.dropdown-toggle{:href => "#", :data => {:toggle => "dropdown"}}
         - if current_user.current_avatar != nil
-          - avatar_url = Service.find(current_user.current_avatar).avatar_url
-          %img{:src => current_user.avatar_url, :height => 25, :width => 25, :style => "border: 1px solid grey; margin-right: 5px;"}
+          %img{:src => Gravatar.new(current_user.email).image_url, :height => 25, :width => 25, :style => "border: 1px solid grey; margin-right: 5px;"}
         = current_user.name
         %b.caret
       %ul.dropdown-menu

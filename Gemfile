@@ -10,6 +10,7 @@ gem 'omniauth-google-apps'
 gem 'omniauth-linkedin'
 gem "paperclip", "~> 3.0"
 gem "haml"
+gem "gravatar-ultimate"
 gem 'bootstrap-sass'
 gem 'foreman'
 gem 'redis'
